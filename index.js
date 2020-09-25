@@ -1,7 +1,11 @@
-var myRect = {
-    area : (x,y) => (x*y),
-    perimeter: (x,y) => (2*(x+y))
-};
+// First approach
+// var myRect = {
+//     area : (x,y) => (x*y),
+//     perimeter: (x,y) => (2*(x+y))
+// };
+
+// Second approach with module
+var myRect = require ("./rectangle")
 
 function calRect(l,w) {
     console.log("**** Calculating area & perimeter of rectanglr for length: " + l + " and width: " + w +" ****");
