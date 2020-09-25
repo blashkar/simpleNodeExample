@@ -10,14 +10,22 @@ var myRect = require ("./rectangle")
 function calRect(l,w) {
     console.log("**** Calculating area & perimeter of rectanglr for length: " + l + " and width: " + w +" ****");
 
-    if (l<=0 || w<=0) {
-        console.log("Error: The diameter should be greater than zero");
-        console.log("\n");
-    } else {
-        console.log("Length: " + l + " Width: "+ w +" The area of rectangle is: " + myRect.area(l,w));
-        console.log("Length: " + l + " Width: "+ w +" The perimeter of rectangle is: " + myRect.perimeter(l,w));
-        console.log("\n");
-    }
+    myRect(l,w, (err,behi) => {
+
+        if (err) {
+            console.log("Error:", err.message);
+            console.log("\n");
+            
+        } else {
+
+            console.log("Length: " + l + " Width: "+ w +" The area of rectangle is: " + behi.area(l,w));
+            console.log("Length: " + l + " Width: "+ w +" The perimeter of rectangle is: " + behi.perimeter(l,w));
+            console.log("\n");
+            
+        }
+    });
+
+    console.log("This statement is after the call to MyRect");
     
 }
 
